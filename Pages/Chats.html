@@ -1,0 +1,117 @@
+<section class="Chats">
+            <div class="Chat_Holder">
+                <section class="Chat_Top">
+                    <div class="Chat_Arrow_Container">
+                        <div class="fa fa-arrow-left Chat_Arrow"></div>
+                    </div>
+                    <div class="Chat_Profile_Image_Frame">
+                        <img src="../Images/Header_Background4.jpg" alt="" class="Chat_Profile_Image">
+                    </div>
+                    <div class="Chat_Heading">
+                        <h1>Chats</h1>
+                    </div>
+                </section>
+                <div class="Chat_Line"></div>
+                <div class="Chat_Home"></div>
+            </div>
+            <div class="Content_Holder">
+                <p></p>
+            </div>
+</section>
+<script>
+
+function myFunction(x) {
+if (x.matches) { // If media query matches
+    $('.Chat_Arrow').on('click',function(){
+        dataki= "id="+2;
+        $.ajax({
+			url: "Home_Page.html",
+			type: "GET",
+			data: "dataki",
+			contentType : false,
+			cache : false,
+			processData:false,
+			crossDomain: true,
+
+			beforeSend:function(data){
+				$('.content').html('<div class="moodloader"><img src="image/mood.gif"><img src="image/loader.gif" class="loading"></div>')
+			},
+
+			success:function(para2){
+				$('.content').html(para2);
+                $('.top-container').show();
+                $('.menu-bar').show();
+                                    
+			},
+
+			error:function(data){
+				alert('Failed to process');
+			}
+		});
+    })
+  } else {
+    $('.Chat_Arrow').on('click',function(){
+        dataki= "id="+2;
+        $.ajax({
+			url: "profile.html",
+			type: "GET",
+			data: "dataki",
+			contentType : false,
+			cache : false,
+			processData:false,
+			crossDomain: true,
+
+			beforeSend:function(data){
+				$('.content').html('<div class="moodloader"><img src="image/mood.gif"><img src="image/loader.gif" class="loading"></div>')
+			},
+
+			success:function(para2){
+				$('.content').html(para2);
+                $('.top-container').show();
+                $('.menu-bar').show();
+                
+                $('.vote-bar').hide();
+                                    
+			},
+
+			error:function(data){
+				alert('Failed to process');
+			}
+		});
+    })
+  }
+}
+
+var x = window.matchMedia("(max-width: 500px)")
+myFunction(x) // Call listener function at run time
+x.addListener(myFunction) // Attach listener function on state changes
+
+
+    /*$('.Chat_Arrow').on('click',function(){
+        dataki= "id="+2;
+        $.ajax({
+			url: "profile.html",
+			type: "GET",
+			data: "dataki",
+			contentType : false,
+			cache : false,
+			processData:false,
+			crossDomain: true,
+
+			beforeSend:function(data){
+				$('.Chats').html('<div class="moodloader"><img src="image/mood.gif"><img src="image/loader.gif" class="loading"></div>')
+			},
+
+			success:function(para2){
+				$('.Chats').html(para2);
+                $('.top-container').show();
+                $('.menu-bar').show();
+                                    
+			},
+
+			error:function(data){
+				alert('Failed to process');
+			}
+		});
+    })*/
+</script>

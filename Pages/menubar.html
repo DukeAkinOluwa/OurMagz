@@ -1,0 +1,277 @@
+<div class="social_handles">
+    <i class="fa fa-home home"></i>
+    <i class="fa fa-commenting commenter"></i>
+    <i class="fa fa-user-secret lecturer"></i>
+    <i class="fa fa-calendar upcoming"></i>
+    <i class="fa fa-shopping-bag bl"></i>
+</div>
+<script type="text/javascript">
+	function myFunction(x) {
+  if (x.matches) { // If media query matches
+    $('.commenter').on('click',function(){
+                    datachat= "id="+2;
+                        $.ajax({
+								url: "Chats.html",
+								type: "GET",
+								data: "datachat",
+								contentType : false,
+								cache : false,
+								processData:false,
+								crossDomain: true,
+
+								beforeSend:function(data){
+									$('.content').html('<div class="moodloader"><img src="image/mood.gif"><img src="image/loader.gif" class="loading"></div>')
+								},
+
+								success:function(para2){
+									$('.content').html(para2);
+									$('.top-container').hide();
+								},
+
+								error:function(data){
+									alert('Failed to process');
+								}
+							});
+                })
+
+                $('.home').on('click',function(){
+                    datahome= "id="+2;
+                        $.ajax({
+								url: "article.html",
+								type: "GET",
+								data: "datahome",
+								contentType : false,
+								cache : false,
+								processData:false,
+								crossDomain: true,
+
+								beforeSend:function(data){
+									$('.content').html('<div class="moodloader"><img src="image/mood.gif"><img src="image/loader.gif" class="loading"></div>')
+								},
+
+								success:function(para2){
+									$('.content').html(para2);
+									$('.top-container').show();
+								},
+
+								error:function(data){
+									alert('Failed to process');
+								}
+							});
+                })
+
+                $('.lecturer').on('click',function(){
+                    datalec= "id="+2;
+                        $.ajax({
+								url: "lecturerbanter.html",
+								type: "GET",
+								data: "datalec",
+								contentType : false,
+								cache : false,
+								processData:false,
+								crossDomain: true,
+
+								beforeSend:function(data){
+									$('.content').html('<div class="moodloader"><img src="image/mood.gif"><img src="image/loader.gif" class="loading"></div>')
+								},
+
+								success:function(para2){
+									$('.content').html(para2);
+									$('.top-container').hide();
+								},
+
+								error:function(data){
+									alert('Failed to process');
+								}
+							});
+                })
+
+                $('.upcoming').on('click',function(){
+                    dataevent= "id="+2;
+                        $.ajax({
+								url: "eventplanner.html",
+								type: "GET",
+								data: "dataevent",
+								contentType : false,
+								cache : false,
+								processData:false,
+								crossDomain: true,
+
+								beforeSend:function(data){
+									$('.content').html('<div class="moodloader"><img src="image/mood.gif"><img src="image/loader.gif" class="loading"></div>')
+								},
+
+								success:function(para2){
+									$('.content').html(para2);
+								},
+
+								error:function(data){
+									alert('Failed to process');
+								}
+							});
+                })
+
+                $('.bl').on('click',function(){
+                    databl= "id="+2;
+                        $.ajax({
+								url: "blackmarket.html",
+								type: "GET",
+								data: "databl",
+								contentType : false,
+								cache : false,
+								processData:false,
+								crossDomain: true,
+
+								beforeSend:function(data){
+									$('.All_Page').html('<div class="moodloader"><img src="image/mood.gif"><img src="image/loader.gif" class="loading"></div>')
+								},
+
+								success:function(para2){
+									$('.All_Page').html(para2);
+                                    $('.top-container').hide();
+                                    $('.menu-bar').hide();
+                                    
+                                    
+								},
+
+								error:function(data){
+									alert('Failed to process');
+								}
+							});
+                })
+  } else {
+    $('.commenter').on('click',function(){
+                    datachat= "id="+2;
+                        $.ajax({
+								url: "Chats.html",
+								type: "GET",
+								data: "datachat",
+								contentType : false,
+								cache : false,
+								processData:false,
+								crossDomain: true,
+
+								beforeSend:function(data){
+									$('.Chats').html('<div class="moodloader"><img src="image/mood.gif"><img src="image/loader.gif" class="loading"></div>')
+								},
+
+								success:function(para2){
+									$('.Chats').html(para2);
+								},
+
+								error:function(data){
+									alert('Failed to process');
+								}
+							});
+                })
+
+                $('.home').on('click',function(){
+                    datahome= "id="+2;
+                        $.ajax({
+								url: "article.html",
+								type: "GET",
+								data: "datahome",
+								contentType : false,
+								cache : false,
+								processData:false,
+								crossDomain: true,
+
+								beforeSend:function(data){
+									$('.content').html('<div class="moodloader"><img src="image/mood.gif"><img src="image/loader.gif" class="loading"></div>')
+								},
+
+								success:function(para2){
+									$('.content').html(para2);
+								},
+
+								error:function(data){
+									alert('Failed to process');
+								}
+							});
+                })
+
+                $('.lecturer').on('click',function(){
+                    datalec= "id="+2;
+                        $.ajax({
+								url: "lecturerbanter.html",
+								type: "GET",
+								data: "datalec",
+								contentType : false,
+								cache : false,
+								processData:false,
+								crossDomain: true,
+
+								beforeSend:function(data){
+									$('.Chats').html('<div class="moodloader"><img src="image/mood.gif"><img src="image/loader.gif" class="loading"></div>')
+								},
+
+								success:function(para2){
+									$('.Chats').html(para2);
+								},
+
+								error:function(data){
+									alert('Failed to process');
+								}
+							});
+                })
+
+                $('.upcoming').on('click',function(){
+                    dataevent= "id="+2;
+                        $.ajax({
+								url: "eventplanner.html",
+								type: "GET",
+								data: "dataevent",
+								contentType : false,
+								cache : false,
+								processData:false,
+								crossDomain: true,
+
+								beforeSend:function(data){
+									$('.content').html('<div class="moodloader"><img src="image/mood.gif"><img src="image/loader.gif" class="loading"></div>')
+								},
+
+								success:function(para2){
+									$('.content').html(para2);
+								},
+
+								error:function(data){
+									alert('Failed to process');
+								}
+							});
+                })
+
+                $('.bl').on('click',function(){
+                    databl= "id="+2;
+                        $.ajax({
+								url: "blackmarket.html",
+								type: "GET",
+								data: "databl",
+								contentType : false,
+								cache : false,
+								processData:false,
+								crossDomain: true,
+
+								beforeSend:function(data){
+									$('.All_Page').html('<div class="moodloader"><img src="image/mood.gif"><img src="image/loader.gif" class="loading"></div>')
+								},
+
+								success:function(para2){
+									$('.All_Page').html(para2);
+                                    $('.top-container').hide();
+                                    $('.menu-bar').hide();
+                                    
+                                    
+								},
+
+								error:function(data){
+									alert('Failed to process');
+								}
+							});
+                })
+  }
+}
+
+var x = window.matchMedia("(max-width: 500px)")
+myFunction(x) // Call listener function at run time
+x.addListener(myFunction) // Attach listener function on state changes
+</script>

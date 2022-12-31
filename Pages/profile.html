@@ -1,0 +1,54 @@
+<section class="Chats">
+    <div class="Profile_Top">
+        <div class="Chat_Arrow_Container">
+            <div class="fa fa-arrow-left Chat_Arrow"></div>
+        </div>
+        <div class="Profile_Profile_Image_Frame">
+            <img src="../Images/Header_Background4.jpg" alt="" class="Profile_Profile_Image">
+        </div>
+        <div class="Profile_Name_And_Username">
+            <div class="Profile_Name">
+                <h1>Hello Name</h1>
+            </div>
+            <div class="Profile_Username">
+                <h1>@Username</h1>
+            </div>
+        </div>
+    </div>
+    <div class="Profile_Line">
+
+    </div>
+    <div class="Chat_Home">
+        <p></p>
+    </div>
+</section>
+
+<script>
+    $('.Chat_Arrow').on('click',function(){
+        dataki= "id="+2;
+        $.ajax({
+			url: "Blank_Page.html",
+			type: "GET",
+			data: "dataki",
+			contentType : false,
+			cache : false,
+			processData:false,
+			crossDomain: true,
+
+			beforeSend:function(data){
+				$('.Chats').html('<div class="moodloader"><img src="image/mood.gif"><img src="image/loader.gif" class="loading"></div>')
+			},
+
+			success:function(para2){
+				$('.Chats').html(para2);
+                $('.top-container').show();
+                $('.menu-bar').show();
+                                    
+			},
+
+			error:function(data){
+				alert('Failed to process');
+			}
+		});
+    })
+</script>
